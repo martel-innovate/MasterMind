@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  web:
+    image: martel/mastermind-ui
+    ports:
+      - "8080:8080"
+
+  api:
+    image: martel/mastermind-api
+    environment:
+      - SERVICE_MANAGER_URI=http://service-manager:8080/v1/stack
+    ports:
+      - "3000:3000"
+    command: rails s -b0
+
+  service-manager:
+    image: icclab/mastermind-service-manager
+    ports:
+      - "8081:8080"
