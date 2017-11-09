@@ -1,17 +1,25 @@
 language: python
+
 cache: pip
+
+sudo: required
+
+services:
+  - docker
+
 python:
   - 2.7
+
 install:
   - pip install Pygments setuptools docutils mock pillow alabaster commonmark recommonmark mkdocs
+
 script:
-# to be uncommented when the initial content committed.
-#  - mkdocs build --clean --site-dir _build/html --theme readthedocs
-  - true
+  - mkdocs build --clean --site-dir _build/html --theme readthedocs
+  - docker-compose up
+  - curl http://localhost:3000/version
 
 matrix:
   include:
-  ## linters for json and JavaScript files
     - language: node_js
       node_js:
         - 8
@@ -21,11 +29,7 @@ matrix:
       before_script:
         - markdownlint .
       script:
-        - true  # add other tests here
-
-notifications:
-  on_success: change
-  on_failure: always
+        - true
 
 branches:
   only:
