@@ -1,0 +1,40 @@
+language: python
+
+cache: pip
+
+sudo: required
+
+python:
+  - 2.7
+
+install:
+  - sudo pip install Pygments setuptools docutils mock pillow alabaster commonmark recommonmark mkdocs
+
+script:
+  - mkdocs build --clean --site-dir _build/html --theme readthedocs
+
+matrix:
+  include:
+    - language: node_js
+      node_js:
+        - 8
+      install:
+        - npm install -g markdownlint-cli --save-dev
+      before_script:
+        - markdownlint .
+      script:
+        - true
+    - language: ruby
+      sudo: required
+      services:
+        - docker
+      before_install:
+        - docker-compose up -d
+        - sleep 120
+      script:
+        - curl http://localhost:3000/version
+
+branches:
+  only:
+    - master
+    - docs

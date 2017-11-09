@@ -5,11 +5,15 @@ docs_dir: 'docs'
 theme: readthedocs
 pages:
     - Home: 'index.md'
-    - Quick Start: 'quickstart.md'
-    - Architecture: 'architecture.md'
     - User Manual:
         - 'Introduction': 'user/introduction.md'
+        - 'Quick Start': 'user/quickstart.md'
+        - 'Step by Step guide': 'user/stepByStep.md'
+        - 'MasterMind Data Models': 'user/dataModels.md'
+        - 'API v1': 'user/apiv1.md'
     - Installation & Administration Manual:
         - 'Introduction': 'admin/introduction.md'
         - 'Installation': 'admin/installation.md'
-        - 'Configuration': 'admin/configuration.md'
+        - 'Service Catalog': 'admin/catalog.md'
+        - 'Actor Management': 'admin/actor_management.md'
+extra_css: ["https://fiware.org/style/fiware_readthedocs.css"]
