@@ -1,7 +1,7 @@
 Docker
 ------
 
-The simplest way to get MasterMind up and running is via Docker, using the docker-compose.yml file provided on Github. To deploy MasterMind, navigate to the folder containing the compose file and type:
+The simplest way to get MasterMind up and running is via Docker, using the `docker-compose.yml` file provided on Github. To deploy MasterMind, navigate to the folder containing the compose file and type:
 
 ```
 docker-compose up

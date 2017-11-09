@@ -59,13 +59,12 @@ A Service is defined by:
   - **Name**: The name MasterMind is going to refer to the service by
   - **Service Type**: The Service Type this Service belongs to
   - **Project**: The Project this service belongs to
+  - **Managed**: Whether the Service is managed or unmanaged by MasterMind
   - **Cluster**: The Cluster this Service is or will be deployed to
   - **Docker Service ID**: The ID of the deployed Service (stack) on Docker
   - **Configuration**: The set of environment variables to provide to the Service when deploying it to a Cluster
   - **Status**: The current status of the Service on the Cluster (e.g. Active, Inactive)
   - **Endpoint**: The endpoint the Service can be reached at
-  - **Latitude**: The Latitude of the geographical location of this Service
-  - **Longitude**: The Longitude of the geographical location of this Service
 
 Service Types
 -------------
@@ -85,7 +84,7 @@ A Service Type is defined by:
 NGSI Subscriptions
 ------------------
 
-This model represents a NSGI Subscription, to be registered to a Context Broker
+This model represents a NSGI V2 Subscription, to be registered to a Context Broker (see the NGSI specs [here](http://fiware.github.io/specifications/ngsiv2/stable/)). 
 
 A NGSI Subscription is defined by:
 

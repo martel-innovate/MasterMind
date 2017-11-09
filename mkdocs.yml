@@ -15,4 +15,5 @@ pages:
         - 'Introduction': 'admin/introduction.md'
         - 'Installation': 'admin/installation.md'
         - 'Service Catalog': 'admin/catalog.md'
+        - 'Actor Management': 'admin/actor_management.md'
 extra_css: ["https://fiware.org/style/fiware_readthedocs.css"]
