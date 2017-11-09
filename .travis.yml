@@ -2,11 +2,6 @@ language: python
 
 cache: pip
 
-sudo: required
-
-services:
-  - docker
-
 python:
   - 2.7
 
@@ -15,21 +10,26 @@ install:
 
 script:
   - mkdocs build --clean --site-dir _build/html --theme readthedocs
-  - docker-compose up
-  - curl http://localhost:3000/version
 
 matrix:
   include:
     - language: node_js
       node_js:
         - 8
-      python:
       install:
         - npm install -g markdownlint-cli --save-dev
       before_script:
         - markdownlint .
       script:
         - true
+    - language: ruby
+      sudo: required
+      services:
+        - docker
+      before_install:
+        - docker-compose up
+      script:
+        - curl http://localhost:3000/version
 
 branches:
   only:
