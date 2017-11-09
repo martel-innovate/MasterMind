@@ -5,7 +5,6 @@ services:
     image: martel/mastermind-ui
     environment:
       - MASTERMIND_API_URI=http://localhost:3000
-      - MASTERMIND_VERSION=0.1.0
     ports:
       - "8080:8080"
 
@@ -13,7 +12,6 @@ services:
     image: martel/mastermind-api
     environment:
       - SERVICE_MANAGER_URI=http://service-manager:8081
-      - MASTERMIND_VERSION=0.1.0
     ports:
       - "3000:3000"
     command: rails s -b0

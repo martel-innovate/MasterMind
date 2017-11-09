@@ -42,19 +42,19 @@ The form has to be filled with this data:
 
 If filled in correctly, clicking "Register Cluster" will bring the user back to the Clusters Overview page, where the new Cluster is registered and ready to be deployed on.
 
-Deploying a Service
--------------------
+Registering a Service
+---------------------
 
-Once a Cluster is registered, the user can start deploying Services on it. From the Project overview page, clicking on Services will bring up the list of currently registered Services, which should be empty to start. Clicking on Register Service will bring up the Service registration form.
+Once a Cluster is registered, the user can start registering Services on it. From the Project overview page, clicking on Services will bring up the list of currently registered Services, which should be empty to start. Clicking on Register Service will bring up the Service registration form.
 
 The form has to be filled as such:
 
   - The name of the Service
   - Whether the Service is going to be managed or unmanaged. Managed Services are deployed and managed from MasterMind itself, while unmanaged Services are already deployed on the Cluster, and thus only need to be registered.
-  - Latitude and Longitude coordinates of the location of the Service
-  - The Cluster the Service will be deployed onto. The dropdown menu will automatically display the Clusters registered to the Project
-  - The Service Type for this new Service. The Types provided come from the Catalog of IoT Services MasterMind can deploy for the user.
-  - The Configuration Variables for the Service. Depending on the Service Type, a series of extra options will be given for the user to fill in. These can be marked as either required or optional, and can come in the form of either fields to fill in, or other Services registered within the Project, for situations involving linking Services together (e.g. an IoT Agent connected to a Context Broker).
+  - The Cluster the Service will be deployed onto. The dropdown menu will automatically display the Clusters registered to the Project. This option is only present if the Service is meant to be managed.
+  - The endpoint of the Service. This is the URI the Service can be reached at. This option is only present for unmanaged Services.
+  - The Service Type for this new Service. The Types provided come from the Catalog of IoT Services MasterMind can register for the user.
+  - The Configuration Variables for the Service. Depending on the Service Type, a series of extra options will be given for the user to fill in. These can be marked as either required or optional, and can come in the form of either fields to fill in, or other Services registered within the Project, for situations involving linking Services together (e.g. an IoT Agent connected to a Context Broker). These fields also differ if the Service is meant to be managed or unmanaged.
 
 Once all the details are filled in, the user can choose to simply register the Service, or register it and deploy it on the Cluster immediately if the Service is managed. If the Service isn't deployed right away, the user can deploy it manually from the Service details page, which can be accessed by clicking on the Service's name from the list of Services.
 
@@ -85,3 +85,10 @@ SCREENSHOT HERE
 ```
 
 Clicking on a Subscription's name on the list will take the user to the Subscription's details page.
+
+Registering Actors to the Project
+---------------------------------
+
+In order to allow more than just the one user who created the Project to perform actions within it, Actors need to be registered within the Project and given Roles.
+
+From the Project Overview page, clicking on Actors will bring up the Project Actors list. The currently logged in User will already have the role of Admin by default, which means it has full control over the Project and its registered resources. Clicking on "Add Actor" will allow the user to add in other users to the Project, and assign a Role to them depending on the degree of control they should have over the Project.
