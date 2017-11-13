@@ -22,14 +22,14 @@ MasterMind's UI can be found on port 8080 by default.
 
 ## Documentation
 
-For the complete Documentation see *LINK HERE*
+For the complete Documentation see [here](http://mastermind-main.readthedocs.io/en/latest/)
 
 ## Related Repositories
 
-[MasterMind API](https://github.com/martel-innovate/MasterMind-API)
-[MasterMind Service Catalog](https://github.com/martel-innovate/MasterMind-Service-Catalog)
-[MasterMind Service Manager](https://github.com/icclab/MasterMind-ServiceManager)
-[MasterMind UI](https://github.com/martel-innovate/MasterMind-UI)
+- [MasterMind API](https://github.com/martel-innovate/MasterMind-API)
+- [MasterMind Service Catalog](https://github.com/martel-innovate/MasterMind-Service-Catalog)
+- [MasterMind Service Manager](https://github.com/icclab/MasterMind-ServiceManager)
+- [MasterMind UI](https://github.com/martel-innovate/MasterMind-UI)
 
 ## How to contribute
 
