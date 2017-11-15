@@ -16,4 +16,6 @@ pages:
         - 'Installation': 'admin/installation.md'
         - 'Service Catalog': 'admin/catalog.md'
         - 'Actor Management': 'admin/actor_management.md'
+    - Code Repository: 'code_repo.md'
+    - Roadmap: 'roadmap.md'
 extra_css: ["https://fiware.org/style/fiware_readthedocs.css"]
