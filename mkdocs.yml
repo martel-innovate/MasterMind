@@ -14,6 +14,7 @@ pages:
     - Installation & Administration Manual:
         - 'Introduction': 'admin/introduction.md'
         - 'Installation': 'admin/installation.md'
+        - 'Service Manager': 'admin/service_manager.md'
         - 'Service Catalog': 'admin/catalog.md'
         - 'Actor Management': 'admin/actor_management.md'
     - Code Repository: 'code_repo.md'
