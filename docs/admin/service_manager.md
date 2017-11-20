@@ -50,15 +50,16 @@ parameters are given as strings plus a key-value mapping JSON object for this
 endpoint:
 
 * **name:** Name of the stack - this is equivalent to the stack_name parameter
-  used in a docker stack deploy command;
+  used in a [docker stack deploy command](https://docs.docker.com/engine/swarm/stack-deploy/#deploy-the-stack-to-the-swarm);
 
 * **compose-file:** A string containing the entire docker-compose file in yaml
   format; Variables may be referenced in this file which are obtained from
   compose-vars; The syntax used for variable substitution is analogous to
-  docker-compose, i.e. `${VARIABLE}`.
+  docker-compose, i.e. `${VARIABLE}`, however default values are not currently
+  supported, i.e. `${VARIABLE:-default}`.
 
-* **compose-vars:** Also a string in yaml format containing the a key-value
-  mapping of the variables previously defined.
+* **compose-vars:** Also a string in yaml format containing the key-value
+  mapping of the variables previously defined (i.e. key: value).
 
 * **engine-url:** Swarm manager docker engine url. For example:
   `tcp://swarmmanager.zurich.fiwarelab.org:2376`
@@ -74,16 +75,19 @@ endpoint:
 
 * **external-files:** An array of JSON objects containing all external files
   required by the compose-file, .i.e secrets and configs. The JSON object
-syntax should be `{‘filename’: ‘file_content’}`.
+  syntax should be `{‘filename’: ‘file_content’}`.
 
-The IP address of the Swarm manager can be found in the [Rancher](http://rancher.com/)
-interface under the tab Infrastructure -> Hosts (More details below). Note
-that a swarm may have more than one manager: in this case, any of the swarm
+If using [Rancher](http://rancher.com/) the IP address of the Swarm manager
+can be found in the interface under the tab
+Infrastructure -> Hosts (More details below).
+Note that a swarm may have more than one manager: in this case, any of the swarm
 managers could be chosen. The default port used by Docker engine is 2376 and
 this is the port usually used in the engine-url parameter. *Note that
 responsibility for ensuring this port is open on the VM lies with the user -
 it may require specifically setting up security groups and/or other firewall
 rules to ensure these ports are accessible*.
+The Swagger UI for the API specs is served by the Service Manager at
+<http://MANAGER_HOST:MANAGER_PORT/v1/ui>
 
 ## Security
 
@@ -91,10 +95,10 @@ In order to safely connect to a remote Docker engine, the Mastermind Service
 Manager requires TLS certificates to protect the connection to the remote
 Docker engine. [This is a common practice in Docker](https://docs.docker.com/engine/security/https/).
 
-[Rancher](http://rancher.com/) makes use of docker-machine which automatically
-generates certificates and protects the engine for every host created - note
-that this does not apply for custom hosts, i.e. hosts which are not created
-using docker-machine.
+For example, [Rancher](http://rancher.com/) makes use of docker-machine which
+automatically generates certificates and protects the engine for every host
+created - note that this does not apply for custom hosts, i.e. hosts which are
+not created using docker-machine.
 
 All certificates can be easily retrieved from Rancher’s UI, in the
 Infrastructure -> Hosts page select the host which has the label
@@ -114,10 +118,9 @@ parameters is provided.
 * command:
   Either an array or a string. For example: "command param1 param2"
   or ["command", “param1”, “param2”]
-
 * configs:
-   Either the short or the long syntax are supported.
-   [For more information click here]('https://docs.docker.com/compose/compose-file/#configs').
+  Either the short or the long syntax are supported.
+  [For more information click here]('https://docs.docker.com/compose/compose-file/#configs').
 * deploy[labels]:
   A JSON object containing the labels for the service.
   [For more information click here]('https://docs.docker.com/compose/compose-file/#labels-1').
@@ -176,7 +179,7 @@ parameters is provided.
 ### Secrets and Configs
 
 * file:
-  Name of the file that used to create the secret or config.
+  Name of the file used to create the secret or config.
   The service manager will check the ‘external_files’ parameter and get
   the file content.
 
