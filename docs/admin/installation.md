@@ -37,8 +37,10 @@ The service's default configuration can be overriden through the use of a few
 environment variables:
 
 - MASTERMIND_VERSION: the current version of MasterMind
-- SERVICE_MANAGER_URI: the URI of MasterMind's Service Manager Microservice,
-  port and protocol included (e.g. <http://service-manager:8081>)
+- SERVICE_MANAGER_HOST: the host of MasterMind's Service Manager Microservice,
+  (e.g. service-manager)
+- SERVICE_MANAGER_PORT: the port of MasterMind's Service Manager Microservice,
+  (e.g. 8080)
 
 ## Service Manager
 
@@ -96,5 +98,7 @@ The UI's default configuration can be overriden through the use of a few
 environment variables:
 
 - MASTERMIND_VERSION: the current version of MasterMind
-- MASTERMIND_API_URI: the URI of MasterMind's API, port and protocol included
-  (e.g. <http://localhost:3000>)
+- MASTERMIND_API_HOST: the host of MasterMind's API
+  (e.g. localhost)
+- MASTERMIND_API_PORT: the port of MasterMind's API
+  (e.g. 3000)
