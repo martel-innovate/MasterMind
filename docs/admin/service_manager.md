@@ -43,6 +43,8 @@ multiple requests to be served at a time.
 * `POST /v1/stack/delete/{name}` - Delete the stack removing services and
   networks. Note that volumes, secrets and configs are not deleted.
 
+* `POST /v1/swarm` - Returns the status of managers and workers of the Swarm.
+
 ![image alt text](../images/swagger_example.png)
 
 The above image depicts a `POST` request to the `/v1/stack` endpoint. A set of
