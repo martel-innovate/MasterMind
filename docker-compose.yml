@@ -4,16 +4,16 @@ services:
   web:
     image: martel/mastermind-ui
     environment:
-      - MASTERMIND_API_HOST='localhost'
-      - MASTERMIND_API_PORT='3000'
+      - MASTERMIND_API_HOST=localhost
+      - MASTERMIND_API_PORT=3000
     ports:
       - "8080:8080"
 
   api:
     image: martel/mastermind-api
     environment:
-      - SERVICE_MANAGER_HOST='service-manager'
-      - SERVICE_MANAGER_PORT='8080'
+      - SERVICE_MANAGER_HOST=service-manager
+      - SERVICE_MANAGER_PORT=8080
     ports:
       - "3000:3000"
     command: rails s -b0
