@@ -41,6 +41,15 @@ environment variables:
   (e.g. service-manager)
 - SERVICE_MANAGER_PORT: the port of MasterMind's Service Manager Microservice,
   (e.g. 8080)
+- MASTERMIND_OAUTH_URI: The URI of the OAUTH IDM to use for MasterMind. By
+  default it uses the official Fiware Lab installation at
+  <https://account.lab.fiware.org>
+- MASTERMIND_OAUTH_CLIENT_ID: The Client ID for OAUTH2 authentication
+- MASTERMIND_OAUTH_SECRET_ID: The Secret ID for OAUTH2 authentication
+- MASTERMIND_OAUTH_REDIRECT_URI: The redirect URI to provide to the IDM for
+  OAUTH2 authentication. This should correspond to the authentication endpooint
+  of MasterMind's API, e.g.
+  <http://localhost:3000/auth/login>
 
 ## Service Manager
 
