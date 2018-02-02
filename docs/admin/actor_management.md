@@ -1,4 +1,6 @@
-# Registering new Actors
+# Actor Management
+
+## Registering new Actors
 
 In MasterMind, Actors represent either Fiware Lab Users or Organizations.
 MasterMind automatically creates a new Actor whenever a new User or Organization
@@ -12,7 +14,7 @@ is automatically given the Role of Admin. By default, Admins can perform any
 action within a Project, including deleting it, while user Roles can only view
 it.
 
-# MasterMind Superadmins
+## MasterMind Superadmins
 
 Actors within MasterMind can also be labelled as a Superadmin. When an Actor is
 made a Superadmin it receives Admin level privileges to all Projects in
