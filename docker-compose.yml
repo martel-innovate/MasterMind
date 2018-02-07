@@ -4,23 +4,23 @@ services:
   web:
     image: martel/mastermind-ui
     environment:
-      - MASTERMIND_API_HOST=localhost
-      - MASTERMIND_API_PORT=3000
-      - MASTERMIND_OAUTH_URI=https://account.lab.fiware.org
-      - MASTERMIND_OAUTH_CLIENT_ID=f856da058c20414db0e946d234a5b9b1
-      - MASTERMIND_OAUTH_REDIRECT_URI=http://localhost:3000/auth/login
+      - MASTERMIND_API_HOST='localhost'
+      - MASTERMIND_API_PORT='3000'
+      - MASTERMIND_OAUTH_URI='account.lab.fiware.org'
+      - MASTERMIND_OAUTH_CLIENT_ID='f856da058c20414db0e946d234a5b9b1'
     ports:
       - "8080:8080"
 
   api:
     image: martel/mastermind-api
     environment:
+      - MASTERMIND_API_HOST=localhost
+      - MASTERMIND_API_PORT=3000
       - SERVICE_MANAGER_HOST=service-manager
       - SERVICE_MANAGER_PORT=8080
       - MASTERMIND_OAUTH_URI=https://account.lab.fiware.org
       - MASTERMIND_OAUTH_CLIENT_ID=f856da058c20414db0e946d234a5b9b1
       - MASTERMIND_OAUTH_SECRET_ID=08eaae80ae544d66ba858de71adb7421
-      - MASTERMIND_OAUTH_REDIRECT_URI=http://localhost:3000/auth/login
     ports:
       - "3000:3000"
     command: rails s -b0
