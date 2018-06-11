@@ -23,10 +23,21 @@ services:
       - MASTERMIND_OAUTH_URI=account.lab.fiware.org
       - MASTERMIND_OAUTH_CLIENT_ID=f856da058c20414db0e946d234a5b9b1
       - MASTERMIND_OAUTH_CLIENT_SECRET=08eaae80ae544d66ba858de71adb7421
+      - MASTERMIND_DB_PASSWORD=password
+      - MASTERMIND_DB_HOST=db
       - OAUTH_ENABLED=true
     ports:
       - "3000:3000"
     command: rails s -b0
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    ports:
+      - "3306:3306"
 
   service-manager:
     image: icclab/mastermind-service-manager
