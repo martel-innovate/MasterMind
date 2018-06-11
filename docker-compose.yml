@@ -10,9 +10,11 @@ services:
       - MASTERMIND_OAUTH_CLIENT_ID='f856da058c20414db0e946d234a5b9b1'
     ports:
       - "8080:8080"
+    depends_on:
+      - api
 
   api:
-    image: martel/mastermind-api
+    image: mastermind-api
     environment:
       - MASTERMIND_API_HOST=localhost
       - MASTERMIND_API_PORT=3000
@@ -26,11 +28,13 @@ services:
       - MASTERMIND_DB_PASSWORD=password
       - MASTERMIND_DB_HOST=db
       - OAUTH_ENABLED=true
+      - SECRET_KEY_BASE=87b1a0a1cc2b8f23f191ce7b5ec69a2ec2c7b0b7d592daa3ac43bc0de0800695003e74cd3384f2312d28ceb0a7207a6bce9618f278839dc19d39a28a831d0034
     ports:
       - "3000:3000"
     command: rails s -b0
     depends_on:
       - db
+      - service-manager
 
   db:
     image: mysql:5.7
