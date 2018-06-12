@@ -14,7 +14,7 @@ services:
       - api
 
   api:
-    image: mastermind-api
+    image: martel/mastermind-api
     environment:
       - MASTERMIND_API_HOST=localhost
       - MASTERMIND_API_PORT=3000
