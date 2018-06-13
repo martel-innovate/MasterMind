@@ -7,6 +7,9 @@ sudo: required
 python:
   - 2.7
 
+before_install:
+  - sudo service mysql stop
+
 install:
   - sudo pip install Pygments setuptools docutils mock pillow alabaster commonmark recommonmark mkdocs
 
