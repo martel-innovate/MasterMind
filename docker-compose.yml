@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    image: martel/mastermind-ui
+    image: mastermind-ui
     environment:
       - MASTERMIND_API_HOST='localhost'
       - MASTERMIND_API_PORT='3000'
@@ -14,7 +14,7 @@ services:
       - api
 
   api:
-    image: martel/mastermind-api
+    image: mastermind-api
     environment:
       - MASTERMIND_API_HOST=localhost
       - MASTERMIND_API_PORT=3000
@@ -23,8 +23,8 @@ services:
       - SERVICE_MANAGER_HOST=service-manager
       - SERVICE_MANAGER_PORT=8080
       - MASTERMIND_OAUTH_URI=account.lab.fiware.org
-      - MASTERMIND_OAUTH_CLIENT_ID=f856da058c20414db0e946d234a5b9b1
-      - MASTERMIND_OAUTH_CLIENT_SECRET=08eaae80ae544d66ba858de71adb7421
+      - MASTERMIND_OAUTH_CLIENT_ID=cb19b84cbc654af2bdedaab30dc49f38
+      - MASTERMIND_OAUTH_CLIENT_SECRET=eb65338461144f03bfabbe0882ea9d35
       - MASTERMIND_DB_PASSWORD=password
       - MASTERMIND_DB_HOST=db
       - OAUTH_ENABLED=true
