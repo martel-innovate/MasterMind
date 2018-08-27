@@ -7,20 +7,22 @@ supported by MasterMind. Such descriptors include both configuration templates
 (for managed and unmanaged services) and the deployment templates (only for
 managed services).
 
-This section describes the structure of the Catalog, and how to extend it if
-needed.
+This section describes the structure of the Catalog: how to import a default
+Catalog available to all MasterMind Projects, as well as importing custom
+Catalogs that are specific to each Project.
 
 ## Catalog Entries
 
-The Catalog itself is a file repository containing different entries. Each
-entry, named after the Service Type it represents, is a folder that contains:
+A Catalog for MasterMind can be imported from any Github repository. A Catalog
+entry corresponds to a subfolder within the repository that contains:
 
 - A `mastermind.yml` file (required), which describes the Service and its
   configuration options. This is what MasterMind uses to generate the UI forms
   to create and deploy new Services.
-- A `docker-compose.yml` (optional - it is required only for services that
-  supports the managed configuration) file which describes the deployment of
-  the service as a Docker Stack on a Docker Swarm cluster.
+- A `docker-compose.yml` file (optional - it is required only for services that
+  supports the managed configuration, e.g. any Service that a user can deploy
+  from MasterMind itself), which describes the deployment of the service as a
+  Docker Stack on a Swarm cluster.
 - Config files (optional), to be used to create Docker configs.
 - Secret files (optional), to be used to create Docker secrets.
 
@@ -101,8 +103,7 @@ The deployment template for a Catalog entry comes in the form of a
 `docker-compose.yml` file, which describes how to deploy the Service on a Docker
 Swarm cluster. These files should be compliant with Docker Compose Version 3.3
 and up in order to be used by MasterMind, however not all options available in
-Compose are currently supported. For a list of supported options see
-*LINK NEEDED*
+Compose are currently supported.
 
 To provide MasterMind users with some degree of configuration at deployment
 time, the `docker-compose.yml` file can define environment variable substitution
@@ -113,5 +114,36 @@ environment:
   - CONFIG_VARIABLE=${CONFIG_VARIABLE}
 ```
 
+If default values are included, for example:
+
+```yaml
+environment:
+  - CONFIG_VARIABLE=${CONFIG_VARIABLE:-foobar}
+```
+
+The value will be ignored when deploying the Service. For setting default values
+always use the mastermind.yml configuration template.
+
 These can then be defined in the configuration template, to be provided by the
 user through MasterMind's UI when creating a new Service.
+
+## Importing the global Catalog
+
+When MasterMind is deployed, the default "official" Catalog will be imported
+(as defined by the MASTERMIND_CATALOG_REPOSITORY env variable for the API).
+This Catalog is available to all Projects in MasterMind, and it's intended to
+contain a series of default recipes that all users can benefit from. The Catalog
+can be manually updated even when MasterMind is running from the UI by a
+MasterMind Superadmin.
+
+## Importing a custom Catalog/Recipe
+
+In addition to the "official" global Catalog, MasterMind users can choose to
+import their own Catalogs and Recipes within the Projects they own in
+MasterMind.
+Unlike the global Catalog, the entries of custom Catalogs are only available
+within the Projects they were imported in.
+Custom Catalogs can be imported directly from the UI, specifying the Github
+repository that contains the Catalog and the branch to checkout. Single recipes
+can also be imported by simply uploading the corresponding mastermind.yml and
+docker-compose.yml files.

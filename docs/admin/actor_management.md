@@ -12,7 +12,9 @@ the Actor needs to be assigned a Role within the Project by an Actor with an
 Admin Role. When a Project is first created, the Actor who created the Project
 is automatically given the Role of Admin. By default, Admins can perform any
 action within a Project, including deleting it, while user Roles can only view
-it.
+it. Permissions can be changed per Actor, such as granting an Actor the
+permission to register new Services, but without allowing it to alter Clusters
+for example. 
 
 ## MasterMind Superadmins
 

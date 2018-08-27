@@ -13,6 +13,7 @@ An Actor is defined by:
 
 - **Fullname**: The full name of the actor
 - **Email**: The email associated to the actor
+- **Superadmin**: Whether or not the actor is a MasterMind superadmin.
 
 ## Projects
 
@@ -51,6 +52,12 @@ A Role is defined by:
 - **Role Level**: The Role Level, which can be either 1 for Admin or 2 for User
 - **Project**: The Project this Role refers to
 - **Actor**: The Actor this Role is assigned to
+- **Cluster Permissions**: Whether the actor is allowed to edit, delete or add
+  new clusters, or can only view them.
+- **Services Permissions**: Whether the actor is allowed to edit, delete or
+  register/deploy new Services, or can only view them.
+- **Subscriptions Permissions**: Whether the actor is allowed to edit, delete
+  or add new subscriptions, or can only view them.
 
 ## Services
 
@@ -72,6 +79,7 @@ A Service is defined by:
   when deploying it to a Cluster
 - **Status**: The current status of the Service on the Cluster (e.g. Active,
   Inactive)
+- **Secured**: Whether the Service has been secured or not
 - **Endpoint**: The endpoint the Service can be reached at
 
 ## Service Types

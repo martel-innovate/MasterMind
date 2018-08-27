@@ -18,7 +18,9 @@ containing the compose file and type:
 docker-compose up
 ```
 
-MasterMind's UI can be found on port 8080 by default.
+MasterMind's UI can be found on port 8080 by default. The environment variables
+that are passed to the MasterMind components can be altered in the compose file
+if needed, but the defaults will work out of the box for some simple testing.
 
 ## Documentation
 
