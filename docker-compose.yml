@@ -7,6 +7,7 @@ services:
       - MASTERMIND_API_HOST=localhost
       - MASTERMIND_API_PORT=3000
       - MASTERMIND_OAUTH_URI=account.lab.fiware.org
+      # This works out of the box, but it should be replaced with the clientId of a custom Oauth App on Fiware Lab
       - MASTERMIND_OAUTH_CLIENT_ID=cb19b84cbc654af2bdedaab30dc49f38
     ports:
       - "8080:8080"
@@ -25,11 +26,13 @@ services:
       - SERVICE_MANAGER_HOST=service-manager
       - SERVICE_MANAGER_PORT=8080
       - MASTERMIND_OAUTH_URI=account.lab.fiware.org
+      # This works out of the box, but it should be replaced with the clientId and secret of a custom Oauth App on Fiware Lab
       - MASTERMIND_OAUTH_CLIENT_ID=cb19b84cbc654af2bdedaab30dc49f38
       - MASTERMIND_OAUTH_CLIENT_SECRET=eb65338461144f03bfabbe0882ea9d35
       - MASTERMIND_DB_PASSWORD=password
       - MASTERMIND_DB_HOST=db
       - OAUTH_ENABLED=true
+      # This is used for generating tokens. It's best to replace this with a different random string
       - SECRET_KEY_BASE=87b1a0a1cc2b8f23f191ce7b5ec69a2ec2c7b0b7d592daa3ac43bc0de0800695003e74cd3384f2312d28ceb0a7207a6bce9618f278839dc19d39a28a831d0034
     ports:
       - "3000:3000"
