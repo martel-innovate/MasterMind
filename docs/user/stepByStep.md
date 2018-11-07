@@ -4,18 +4,15 @@
 
 Assuming MasterMind is running locally, the home page can be reached on
 <http://localhost:8080>. The first time accessing MasterMind the user will most
-likely see a login screen.
+likely see a welcome page.
 
-```shell
-SCREENSHOT HERE
-```
+![welcome Page](../images/home.png)
 
 Clicking Login will allow the user to Authenticate in MasterMind with its Fiware
-Lab credentials. Successfully logging in will take it to the projects list.
+Lab credentials. After successfully logging in, the user can access the Projects
+page.
 
-```shell
-SCREENSHOT HERE
-```
+![projects page](../images/projects.png)
 
 ## Registering a new Project
 
@@ -27,9 +24,7 @@ automatically given an Admin role in it.
 When clicking on the newly created project, the user will be brought to the
 project overview page.
 
-```shell
-SCREENSHOT HERE
-```
+![project overview page](../images/project_overview.png)
 
 ## Registering a Cluster
 
@@ -38,19 +33,21 @@ From the Project overview page, clicking on Clusters will lead the User to the
 Clusters overview page. Clicking "Register Cluster" will bring up the form to
 register a Cluster.
 
+![cluster registration page](../images/cluster_registration.png)
+
 We can assume that the user already has a Docker Swarm Cluster available, and
 also has access to the TLS files for it (cert.pem, ca.pem and key.pem files).
 
 The form has to be filled with this data:
 
 - The name for the Cluster
-- A description for it
+- A description for the Cluster
 - The endpoint of the Cluster. This refers specifically to the endpoint of the
   Docker Swarm Cluster's Master Node, including the protocol to communicate with
   it and the port used by Docker (e.g. tcp://192.168.99.100:2376)
-- The cert.pem file
-- The ca.pem file
-- The key.pem file
+- The cert.pem file to access the Cluster
+- The ca.pem file to access the Cluster
+- The key.pem file to access the Cluster
 
 If filled in correctly, clicking "Register Cluster" will bring the user back to
 the Clusters Overview page, where the new Cluster is registered and ready to be
@@ -62,6 +59,8 @@ Once a Cluster is registered, the user can start registering Services on it.
 From the Project overview page, clicking on Services will bring up the list of
 currently registered Services, which should be empty to start. Clicking on
 Register Service will bring up the Service registration form.
+
+![cluster registration page](../images/register_service.png)
 
 The form has to be filled as such:
 
@@ -90,9 +89,7 @@ is managed. If the Service isn't deployed right away, the user can deploy it
 manually from the Service details page, which can be accessed by clicking on the
 Service's name from the list of Services.
 
-```shell
-SCREENSHOT HERE
-```
+![services page](../images/services.png)
 
 ## Registering NGSI Subscriptions
 
@@ -119,11 +116,6 @@ The form can be filled in as such:
 After registering the Subscription its status is set to inactive by default, as
 seen on the Subscriptions list. It can then be selected and activated, as well
 as deactivated, by the user via the buttons below.
-
-```shell
-SCREENSHOT HERE
-```
-
 Clicking on a Subscription's name on the list will take the user to the
 Subscription's details page.
 
@@ -134,7 +126,11 @@ actions within it, Actors need to be registered within the Project and given
 Roles.
 
 From the Project Overview page, clicking on Actors will bring up the Project
-Actors list. The currently logged in User will already have the role of Admin
+Actors list.
+
+![actors management page](../images/actors.png)
+
+The currently logged in User will already have the role of Admin
 by default, which means it has full control over the Project and its registered
 resources. Clicking on "Add Actor" will allow the user to add in other users to
 the Project, and assign a Role to them depending on the degree of control they
