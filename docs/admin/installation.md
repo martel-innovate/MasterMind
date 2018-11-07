@@ -53,8 +53,7 @@ environment variables:
 - MASTERMIND_OAUTH_CLIENT_ID: The Client ID for OAUTH2 authentication
 - MASTERMIND_OAUTH_SECRET_ID: The Secret ID for OAUTH2 authentication
 - MASTERMIND_CATALOG_REPOSITORY: The URI of the Github repository where the
-  global "official" Catalog for the MasterMind Service Types is found
-  (e.g [https://github.com/martel-innovate/MasterMind-Service-Catalog])
+  global "official" Catalog for the MasterMind Service Types is found 
 - MASTERMIND_CATALOG_REPOSITORY_BRANCH: The Branch to use for the Catalog repo
   (e.g master)
 - MASTERMIND_DB_PASSWORD: The password used in the MySQL database for the
@@ -68,7 +67,7 @@ environment variables:
 - SECRET_KEY_BASE: The base string for Rails to handle tokens and cookies. It
   would be best to generate a new random string to use here when deploying to
   production environments.
-  
+
 ## Service Manager
 
 The Service Manager is a Microservice, written in Python, which performs the
