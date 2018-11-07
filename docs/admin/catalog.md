@@ -123,8 +123,8 @@ environment:
   - CONFIG_VARIABLE=${CONFIG_VARIABLE:-foobar}
 ```
 
-The value will be ignored when deploying the Service. For setting default values
-always use the mastermind.yml configuration template.
+The value foobar will be ignored when deploying the Service. For setting default
+values always use the mastermind.yml configuration template.
 
 These can then be defined in the configuration template, to be provided by the
 user through MasterMind's UI when creating a new Service.
@@ -149,6 +149,6 @@ within the Projects they were imported in.
 Custom Catalogs can be imported directly from the UI, specifying the git
 repository that contains the Catalog and the branch to checkout. Single recipes
 can also be imported by simply uploading the corresponding mastermind.yml and
-docker-compose.yml files. At the moment it's no possible to import a single 
+docker-compose.yml files. At the moment it's not possible to import a single
 recipe that uses external configuration or secret files, those can only be
 imported as part of an external repository.
