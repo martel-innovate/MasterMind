@@ -14,7 +14,9 @@ is automatically given the Role of Admin. By default, Admins can perform any
 action within a Project, including deleting it, while user Roles can only view
 it. Permissions can be changed per Actor, such as granting an Actor the
 permission to register new Services, but without allowing it to alter Clusters
-for example. 
+for example.
+
+![actors management page](../images/actors.png)
 
 ## MasterMind Superadmins
 
@@ -24,4 +26,4 @@ MasterMind regardless of its Role within individual Projects. In addition,
 Superadmins can view and alter all registered Actors in MasterMind, and make
 more Superadmins if needed. The purpose of Superadmins is the management of
 the MasterMind platform as a whole, and thus the Superadmin status should only
-be granted to whoever is Administrator for MasterMind.
+be granted to whoever is Administrator for MasterMind, and not any regular user.
